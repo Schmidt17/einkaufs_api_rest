@@ -10,7 +10,7 @@ services:
       - "8003:80"
     environment:
       - POSTGRES_HOSTNAME=db
-      - POSTGRES_PORT=5434
+      - POSTGRES_PORT=5432
     restart: always
     depends_on:
       - db
