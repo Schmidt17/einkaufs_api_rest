@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 from . import credentials
 
@@ -83,8 +84,8 @@ DATABASES = {
         'NAME': 'einkaufs_api',
         'USER': credentials.postgres_db_user,
         'PASSWORD': credentials.postgres_db_password,
-        'HOST': 'localhost',
-        'PORT': '5432'
+        'HOST': os.environ.get('POSTGRES_HOSTNAME'),
+        'PORT': os.environ.get('POSTGRES_PORT')
     }
 }
 
