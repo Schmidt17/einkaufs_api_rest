@@ -13,6 +13,6 @@ RUN python3 -m pip install --upgrade gunicorn
 COPY ./requirements.txt /app/requirements.txt
 RUN python3 -m pip install --no-cache-dir --upgrade -r requirements.txt
 
-ENV SCRIPT_NAME=/einkaufs_api
+#ENV SCRIPT_NAME=/einkaufs_api
 
 CMD python3 manage.py makemigrations collect && python3 manage.py migrate && gunicorn --bind 0.0.0.0:80 einkaufs_api_rest.wsgi
