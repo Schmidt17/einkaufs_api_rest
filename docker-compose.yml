@@ -8,9 +8,8 @@ services:
       - .:/app
     ports:
       - "8003:80"
-    environment:
-      - POSTGRES_HOSTNAME=db
-      - POSTGRES_PORT=5432
+    env_file:
+      - .env.prod
     restart: always
     depends_on:
       - db
@@ -20,10 +19,8 @@ services:
     volumes:
       - ./db/data:/var/lib/postgresql/data
       - ./db/init:/docker-entrypoint-initdb.d/
-    environment:
-      - POSTGRES_NAME=einkaufs_api
-      - POSTGRES_USER=einkaufs_api
-      - POSTGRES_PASSWORD=51caf0676111
+    env_file:
+      - .env.prod.db
     ports:
       - "5434:5432"
     restart: always
