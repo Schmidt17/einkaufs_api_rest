@@ -12,3 +12,4 @@ class CollectedItem(models.Model):
     latitude = models.FloatField(null=True, blank=True, default=None)
     longitude = models.FloatField(null=True, blank=True, default=None)
     timestamp = models.DateTimeField(auto_now_add=True)
+    user_agent = models.TextField(null=True, blank=True, default=None)
