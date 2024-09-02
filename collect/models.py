@@ -13,3 +13,4 @@ class CollectedItem(models.Model):
     longitude = models.FloatField(null=True, blank=True, default=None)
     timestamp = models.DateTimeField(auto_now_add=True)
     user_agent = models.TextField(null=True, blank=True, default=None)
+    user_key = models.TextField(null=True, blank=True, default=None)
