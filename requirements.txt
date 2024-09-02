@@ -1,5 +1,6 @@
 Django>=4.2
 djangorestframework
+djangorestframework-api-key==2.*
 markdown
 django-filter
 psycopg2-binary
