@@ -4,3 +4,4 @@ djangorestframework-api-key==2.*
 markdown
 django-filter
 psycopg2-binary
+cloudpickle
