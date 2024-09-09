@@ -5,3 +5,5 @@ markdown
 django-filter
 psycopg2-binary
 cloudpickle
+scikit-learn
+numpy
