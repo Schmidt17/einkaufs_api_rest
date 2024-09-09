@@ -7,3 +7,5 @@ psycopg2-binary
 cloudpickle
 scikit-learn
 numpy
+scipy<1.13
+compress-fasttext
