@@ -31,7 +31,8 @@ class SortList(APIView):
 
     def post(self, request):
         list_to_sort = request.data['input_list']
-        sorted_array, sorted_scores = self.sort_func(list_to_sort)
+        sorted_array, sorted_scores, sort_indices = self.sort_func(list_to_sort)
         sorted_list = sorted_array.tolist()
+        sort_indices = sort_indices.tolist()
 
-        return Response({"sorted_list": sorted_list})
+        return Response({"sorted_list": sorted_list, "sort_indices": sort_indices, "input_list": list_to_sort})
