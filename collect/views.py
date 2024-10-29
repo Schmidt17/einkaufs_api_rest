@@ -46,7 +46,13 @@ def load_model(path, tflite_path=None):
 
 
 class SortList(APIView):
-    sort_func = load_model(Path('resources') / 'sort_func_REWE_Kreuzstrasse.cloudpickle')
+    base_model_path = Path('resources') / 'sort_func_REWE_Kreuzstrasse.cloudpickle'
+    tflite_model_path = Path('resources') / 'sort_func_REWE_Kreuzstrasse.tflite'
+
+    if not tflite_model_path.is_file():
+        tflite_model_path = None
+
+    sort_func = load_model(base_model_path, tflite_model_path)
 
     def post(self, request):
         list_to_sort = request.data['input_list']
