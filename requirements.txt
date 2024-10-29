@@ -10,4 +10,4 @@ scikit-learn
 numpy
 scipy<1.13
 compress-fasttext
-tflite_runtime
+tflite-runtime
